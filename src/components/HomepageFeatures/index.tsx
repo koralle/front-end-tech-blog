@@ -41,7 +41,7 @@ const FeatureList: FeatureItem[] = [
   }
 ]
 
-function Feature({ title, Svg, description }: FeatureItem) {
+const Feature = ({ title, Svg, description }: FeatureItem) => {
   return (
     <div className={clsx('col col--4')}>
       <div className='text--center'>
@@ -58,7 +58,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
   )
 }
 
-export default function HomepageFeatures(): JSX.Element {
+const HomepageFeatures = (): JSX.Element => {
   return (
     <section className='features'>
       <div className='container'>
@@ -74,3 +74,5 @@ export default function HomepageFeatures(): JSX.Element {
     </section>
   )
 }
+
+export default HomepageFeatures

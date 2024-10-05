@@ -7,8 +7,9 @@ import Heading from '@theme/Heading'
 
 import './index.css'
 
-function HomepageHeader() {
+const HomepageHeader = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext()
+
   return (
     <header className={clsx('hero hero--primary', 'heroBanner')}>
       <div className='container'>
@@ -21,8 +22,8 @@ function HomepageHeader() {
         <div className='buttons'>
           <Link
             className='button button--secondary button--lg'
-            to='/docs/intro'>
-            Docusaurus Tutorial - 5min ⏱️
+            to='/blog'>
+            ブログを回遊する
           </Link>
         </div>
       </div>
@@ -30,12 +31,13 @@ function HomepageHeader() {
   )
 }
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext()
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'>
+      title={siteConfig.title}
+      description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
@@ -43,3 +45,5 @@ export default function Home(): JSX.Element {
     </Layout>
   )
 }
+
+export default Home
