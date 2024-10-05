@@ -19,7 +19,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
+    "typecheck:app": "tsc -p ./tsconfig.app.json",
+    "typecheck:node": "tsc -p ./tsconfig.node.json",
     "preview": "pnpm run build && wrangler pages dev ./build"
   },
   "dependencies": {
