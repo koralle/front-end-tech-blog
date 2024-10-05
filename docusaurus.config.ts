@@ -2,9 +2,11 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
+const siteTitle = 'kollog' as const
+
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: siteTitle,
+  tagline: 'フロントエンド技術の海にぷかぷか浮かぶ1匹のあざらしの技術メモブログ',
   favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
@@ -66,9 +68,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: siteTitle,
       logo: {
-        alt: 'My Site Logo',
+        alt: `Logo of ${siteTitle}`,
         src: 'img/logo.svg'
       },
       items: [
