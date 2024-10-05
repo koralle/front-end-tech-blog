@@ -5,12 +5,12 @@ import Layout from '@theme/Layout'
 import HomepageFeatures from '../../src/components/HomepageFeatures'
 import Heading from '@theme/Heading'
 
-import styles from './index.module.css'
+import './index.css'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
   return (
-    <header className={clsx('hero hero--primary', styles['heroBanner'])}>
+    <header className={clsx('hero hero--primary', 'heroBanner')}>
       <div className='container'>
         <Heading
           as='h1'
@@ -18,7 +18,7 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className='hero__subtitle'>{siteConfig.tagline}</p>
-        <div className={styles['buttons']}>
+        <div className='buttons'>
           <Link
             className='button button--secondary button--lg'
             to='/docs/intro'>

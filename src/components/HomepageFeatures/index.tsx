@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import Heading from '@theme/Heading'
-import styles from './styles.module.css'
+import './styles.css'
 
 type FeatureItem = {
   title: string
@@ -46,7 +46,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
     <div className={clsx('col col--4')}>
       <div className='text--center'>
         <Svg
-          className={styles['featureSvg']}
+          className='featureSvg'
           role='img'
         />
       </div>
@@ -60,7 +60,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles['features']}>
+    <section className='features'>
       <div className='container'>
         <div className='row'>
           {FeatureList.map((props, idx) => (
