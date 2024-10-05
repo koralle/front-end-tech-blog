@@ -23,7 +23,9 @@
     "typecheck:node": "tsc -p ./tsconfig.node.json",
     "preview": "pnpm run build && wrangler pages dev ./build",
     "lint": "biome lint .",
-    "lint:fix": "biome lint --fix ."
+    "lint:fix": "biome lint --fix .",
+    "format": "biome format .",
+    "format:fix": "biome format --fix ."
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
