@@ -104,6 +104,10 @@ const config: Config = {
             {
               label: 'Twitter',
               href: 'https://twitter.com/koralle_tech'
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/koralle'
             }
           ]
         },
