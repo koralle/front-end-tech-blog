@@ -84,11 +84,11 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Organization',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro'
+              label: 'Yamada UI',
+              href: 'https://github.com/yamada-ui'
             }
           ]
         },
