@@ -1,19 +1,68 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+html:
+  label: HTML
+  permalink: /html
+  description: HTML tag description
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+css:
+  label: CSS
+  permalink: /css
+  description: CSS tag description
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+javascript:
+  label: JavaScript
+  permalink: /javascript
+  description: JavaScript tag description
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+ecmascript:
+  label: ECMAScript
+  permalink: /ecmascript
+  description: ECMAScript tag description
+
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: TypeScript tag description
+
+react:
+  label: React
+  permalink: /react
+  description: React tag description
+
+vue:
+  label: Vue
+  permalink: /vue
+  description: Vue tag description
+
+nextjs:
+  label: Next.js
+  permalink: /nextjs
+  description: Next.js tag description
+
+remix:
+  label: Remix
+  permalink: /remix
+  description: Remix tag description
+
+git:
+  label: Git
+  permalink: /git
+  description: Git tag description
+
+github:
+  label: GitHub
+  permalink: /github
+  description: GitHub tag description
+
+github-actions:
+  label: GitHub Actions
+  permalink: /github-actions
+  description: GitHub Actions tag description
+
+nix:
+  label: Nix
+  permalink: /nix
+  description: Nix tag description
+
+testing:
+  label: Testing
+  permalink: /testing
