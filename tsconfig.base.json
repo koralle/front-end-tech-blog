@@ -1,15 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@tsconfig/strictest/tsconfig.json",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "moduleResolution": "bundler",
+    "target": "esnext",
     "module": "preserve",
-    "noEmit": true,
-    "skipLibCheck": true,
-    "types": ["@docusaurus/module-type-aliases"]
+    "types": ["astro/client", "@cloudflare/workers-types/2023-07-01"]
   }
 }

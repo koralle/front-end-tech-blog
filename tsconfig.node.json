@@ -4,7 +4,8 @@
     "composite": true,
     "incremental": true,
     "tsBuildInfoFile": "./node_modules/.cache/tsconfig.node.tsbuildinfo",
-    "types": ["@cloudflare/workers-types/2023-07-01", "@docusaurus/module-type-aliases"]
+    "lib": ["esnext"],
+    "types": ["@cloudflare/workers-types/2023-07-01"]
   },
-  "include": ["docusaurus.config.ts", "sidebars.ts", "babel.config.js"]
+  "include": ["astro.config.ts", "env.d.ts"]
 }

@@ -1,12 +1,11 @@
 # Dependencies
-/node_modules
+node_modules
 
 # Production
-/build
+dist
 
 # Generated files
-.docusaurus
-.cache-loader
+.astro
 
 # Misc
 .DS_Store
@@ -14,10 +13,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # wrangler files
 .wrangler

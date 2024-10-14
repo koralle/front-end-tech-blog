@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content'
+import { SiteTitle } from '../../consts'
+import { Layout } from '../../layouts'
+import { ViewTransitions } from 'astro:transitions'
+
+export const getStaticPaths = async () => {
+  const blogEntries = await getCollection('blog')
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }))
+}
+
+export const prerender = true
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{entry.data.title} | {SiteTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Layout>
+      <article>
+        <h1>{entry.data.title}</h1>
+        <Content />
+      </article>
+    </Layout>
+  </body>
+</html>

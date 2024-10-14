@@ -4,7 +4,10 @@
     "composite": true,
     "incremental": true,
     "tsBuildInfoFile": "./node_modules/.cache/tsconfig.app.tsbuildinfo",
-    "types": [ "@docusaurus/module-type-aliases", "@docusaurus/theme-classic" ]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["astro/client"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "env.d.ts"]
 }
