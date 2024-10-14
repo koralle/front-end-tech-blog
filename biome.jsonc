@@ -2,16 +2,14 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "include": [
+      "src/**/*.astro",
       "src/**/*.ts",
-      "src/**/*.tsx",
+      "src/**/*.d.ts",
+      "src/**/*.css",
+      "astro.config.ts",
       "biome.jsonc",
-      "docusaurus.config.ts",
       "package.json",
-      "sidebars.ts",
-      "tsconfig.json",
-      "tsconfig.app.json",
-      "tsconfig.node.json",
-      "tsconfig.base.json"
+      "tsconfig.json"
     ]
   },
   "vcs": {
@@ -75,5 +73,18 @@
       "allowComments": true,
       "allowTrailingCommas": false
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["src/**/*.astro"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
 }

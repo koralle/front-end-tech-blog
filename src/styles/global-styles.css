@@ -1,0 +1,15 @@
+@import url('./vars.css');
+
+:where(:root) {
+  color-scheme: dark light;
+}
+
+:where(html, body) {
+  font-family: var(--font-family);
+  color: var(--c-primary);
+  background-color: var(--c-bg-primary);
+}
+
+:where(p) {
+  color: var(--c-text-main);
+}

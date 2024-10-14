@@ -1,0 +1,39 @@
+---
+---
+
+<header
+  aria-label="サイトヘッダー"
+  class="site-header"
+>
+  <div
+    class="site-header__title"
+  >
+    <p>kollog</p>
+  </div>
+
+  <nav
+    class="site-header__nav"
+  >
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT</a>
+    <a href="/articles">ARTICLES</a>
+  </nav>
+</header>
+
+<style>
+:where(.site-header) {
+  display flex;
+  container-type: inline-size;
+  container-name: site-header;
+
+  :where(.site-header__title, .site-header__nav) {
+    width: fit-content;
+    padding-inline: 1rem;
+  }
+
+  :where(.site-header__nav) {
+    display flex;
+    gap: 1rem;
+  }
+}
+</style>

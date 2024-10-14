@@ -1,0 +1,12 @@
+# pnpm
+pnpm-lock.yaml
+
+# Cloudflare
+wrangler.toml
+.wrangler
+
+# Astro
+.astro
+
+dist
+node_modules

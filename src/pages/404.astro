@@ -1,0 +1,22 @@
+---
+import { SiteTitle } from '../consts'
+import { Layout } from '../layouts'
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SiteTitle} | ページが見つかりませんでした</title>
+  </head>
+  <body>
+    <Layout>
+      <article>
+        <h1>ページが見つかりませんでした</h1>
+        <a href="/" data-astro-prefetch="load"> Homeに戻る </a>
+      </article>
+    </Layout>
+  </body>
+</html>
