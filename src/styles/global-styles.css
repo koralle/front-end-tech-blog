@@ -1,4 +1,5 @@
 @import url('./vars.css');
+@import url('../../node_modules/taks-custom-base-css/taks-custom-base.css');
 
 :where(:root) {
   color-scheme: dark light;
