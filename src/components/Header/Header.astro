@@ -1,0 +1,25 @@
+---
+import { Link } from '../Link'
+---
+
+<div class="site-header__container">
+  <header aria-label="サイトヘッダー" class="site-header">
+    <div class="site-header__title">
+      <Link href="/">kollog</Link>
+    </div>
+
+    <nav class="site-header__nav">
+      <Link href="/">HOME</Link>
+      <Link href="/about">ABOUT</Link>
+      <Link href="/articles">ARTICLES</Link>
+    </nav>
+  </header>
+</div>
+
+<style>
+  .site-header__container {
+    display: flex;
+    flex-direction: column;
+    container: site-header / inline-size;
+  }
+</style>
