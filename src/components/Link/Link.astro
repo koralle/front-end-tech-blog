@@ -11,10 +11,13 @@ const { href, ...props } = Astro.props as LinkProps
 </a>
 
 <style>
+@layer component {
   .ui-link {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+
 
     color: var(--c-text-main);
 
@@ -22,10 +25,12 @@ const { href, ...props } = Astro.props as LinkProps
       &:where(:any-link:hover) {
         color: darken(var(--c-text-main), 10%);
         text-decoration: underline;
+        text-underline-offset: 0.25em;
       }
     }
 
     &:where(:focus-visible) {
     }
   }
+}
 </style>
