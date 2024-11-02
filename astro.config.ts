@@ -4,6 +4,8 @@ import mdx from '@astrojs/mdx'
 
 import react from '@astrojs/react'
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -16,7 +18,7 @@ export default defineConfig({
     }
   },
 
-  integrations: [mdx(), react()],
+  integrations: [mdx(), react(), icon()],
 
   markdown: {
     shikiConfig: {
