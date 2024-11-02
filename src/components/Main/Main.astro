@@ -1,0 +1,36 @@
+---
+---
+
+<main id="main" class="ui-main">
+  <div class="ui-main__container">
+    <slot />
+  </div>
+</main>
+
+<style>
+@layer layout {
+  :where(.ui-main) {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 100cqi;
+
+    :where(.ui-main__container) {
+      padding-inline: 1rem;
+      padding-block: 0.75rem;
+
+      width: 100%;
+    }
+
+    @container global-container (width >= calc(768 / 16 * 1rem)) {
+    }
+
+    @container global-container (width >= calc(1440 / 16 * 1rem)) {
+      :where(.ui-main__container) {
+        width: calc(1440 / 16 * 1rem);
+      }
+    }
+  }
+}
+</style>
