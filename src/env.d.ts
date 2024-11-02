@@ -7,9 +7,9 @@ declare namespace App {
 }
 
 interface ImportMetaEnv {
-  readonly BUILD_ANALYZE: boolean;
+  readonly BUILD_ANALYZE: boolean
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnv
 }
