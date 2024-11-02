@@ -2,8 +2,8 @@
 import { Link } from '../Link'
 ---
 
-<div class="site-header__container">
-  <header aria-label="サイトヘッダー" class="site-header">
+<header aria-label="サイトヘッダー" class="site-header">
+  <div class="site-header__container">
     <div class="site-header__title">
       <Link href="/">kollog</Link>
     </div>
@@ -13,13 +13,66 @@ import { Link } from '../Link'
       <Link href="/about">ABOUT</Link>
       <Link href="/articles">ARTICLES</Link>
     </nav>
-  </header>
-</div>
+  </div>
+</header>
 
 <style>
-  .site-header__container {
-    display: flex;
-    flex-direction: column;
+@layer layout {
+  :where(.site-header) {
+    --height__header: calc(64 / 16 * 1rem);
+
     container: site-header / inline-size;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 100cqi;
+
+    backdrop-filter: saturate(100%) blur(20px);
+
+    :where(.site-header__container) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-inline: 1rem;
+      padding-block: 0.75rem;
+
+      width: 100%;
+      height: var(--height__header);
+
+      letter-spacing: 0.04em;
+
+      :where(.site-header__title) {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      :where(.site-header__nav) {
+        display: none;
+
+      }
+    }
   }
+
+  @container site-header (width >= 768px) {
+    :where(.site-header__container) {
+
+      :where(.site-header__nav) {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+
+  @container site-header (width >= 1440px) {
+    :where(.site-header__container) {
+      width: var(--width--globalContent);
+    }
+  }
+}
 </style>
