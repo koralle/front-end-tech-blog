@@ -1,5 +1,6 @@
 ---
-import { Footer, Header } from '../components'
+import { Footer, Header, Main } from '../components'
+import '../styles/layer.css'
 import '../styles/vars.css'
 import '../styles/global-styles.css'
 ---
@@ -7,9 +8,41 @@ import '../styles/global-styles.css'
 <html lang="ja">
   <body>
     <Header />
-    <main id="main">
+    <Main>
       <slot />
-    </main>
+    </Main>
     <Footer />
   </body>
 </html>
+
+<style>
+@import url('../styles/vars.css') layer(base);
+@import url('../../node_modules/taks-custom-base-css/taks-custom-base.css') layer(reset);
+
+@layer base {
+  :where(:root) {
+    color-scheme: dark light;
+  }
+
+  :where(html, body) {
+    font-family: var(--font-family);
+    color: var(--c-primary);
+    background-color: var(--c-bg-primary);
+  }
+
+  :where(p) {
+    color: var(--c-text-main);
+  }
+
+  :where(body) {
+    container-name: global-container;
+    container-type: inline-size;
+
+    position: relative;
+
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+  }
+}
+
+</style>
