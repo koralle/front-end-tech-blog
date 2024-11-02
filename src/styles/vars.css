@@ -3,6 +3,12 @@
     sans-serif;
 }
 
+@property --width--globalContent {
+  syntax: '*';
+  inherits: false;
+  initial-value: calc(1440 / 16 * 1rem);
+}
+
 @property --c-primary {
   syntax: '*';
   inherits: false;
