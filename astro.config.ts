@@ -6,6 +6,13 @@ import react from '@astrojs/react'
 
 import icon from 'astro-icon'
 
+import {
+  transformerMetaHighlight,
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+  transformerNotationFocus,
+  transformerNotationHighlight
+} from '@shikijs/transformers'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 
 // https://astro.build/config
@@ -31,7 +38,14 @@ export default defineConfig({
       themes: {
         light: 'catppuccin-frappe',
         dark: 'catppuccin-mocha'
-      }
+      },
+      transformers: [
+        transformerNotationDiff(),
+        transformerNotationHighlight(),
+        transformerNotationErrorLevel(),
+        transformerMetaHighlight(),
+        transformerNotationFocus()
+      ]
     }
   }
 })
