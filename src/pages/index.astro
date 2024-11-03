@@ -5,6 +5,7 @@ import { Layout } from '../layouts'
 
 import 'dayjs/locale/ja'
 import { ArticleCard } from '../components'
+import dayjs from 'dayjs'
 
 const articles = await getCollection('articles')
 ---
@@ -31,7 +32,13 @@ const articles = await getCollection('articles')
             <h2>最新記事一覧</h2>
           </header>
           <div class="latest-articles__list">
-            {articles.map((article) => <ArticleCard article={article} locale="ja" />)}
+            {
+              articles
+                .toSorted(
+                  (a, b) => dayjs(b.data.publishedDate).unix() - dayjs(a.data.publishedDate).unix()
+                )
+                .map((article) => <ArticleCard article={article} locale="ja" />)
+            }
           </div>
         </section>
       </section>
@@ -74,7 +81,6 @@ const articles = await getCollection('articles')
         height: max-content;
 
         :where(.latest-articles__header) {
-
           display: flex;
           flex-direction: column;
           justify-content: center;
