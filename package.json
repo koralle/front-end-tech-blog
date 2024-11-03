@@ -25,6 +25,7 @@
     "format:fix": "prettier . --write"
   },
   "dependencies": {
+    "@astro-community/astro-embed-link-preview": "^0.2.2",
     "@iconify-json/mdi": "^1.2.1",
     "@nanostores/react": "^0.8.0",
     "astro": "^4.16.8",
