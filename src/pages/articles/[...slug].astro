@@ -53,18 +53,22 @@ const { Content } = await entry.render()
 </html>
 
 <style>
+@layer layout {
   :where(.article) {
-    display: grid;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     :where(.article__header) {
       display: grid;
       gap: 1.5rem;
+      width: 100%;
 
       :where(.article__title) {
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--c-primary);
+        width: 100%;
 
         margin-block: var(--leading-trim);
       }
@@ -92,4 +96,5 @@ const { Content } = await entry.render()
       }
     }
   }
+}
 </style>
