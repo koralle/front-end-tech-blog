@@ -3,6 +3,18 @@
     sans-serif;
 }
 
+@property --width--globalContent {
+  syntax: '*';
+  inherits: false;
+  initial-value: calc(1440 / 16 * 1rem);
+}
+
+@property --width--mainContent {
+  syntax: '*';
+  inherits: false;
+  initial-value: calc(1024 / 16 * 1rem);
+}
+
 @property --c-primary {
   syntax: '*';
   inherits: false;
@@ -19,4 +31,10 @@
   syntax: '*';
   inherits: false;
   initial-value: light-dark(#3d3d3d, #d3d3d3);
+}
+
+@property --leading-trim {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: calc((1em - 1lh) / 2);
 }

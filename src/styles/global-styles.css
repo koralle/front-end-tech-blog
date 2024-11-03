@@ -1,16 +1,17 @@
-@import url('./vars.css');
-@import url('../../node_modules/taks-custom-base-css/taks-custom-base.css');
+@layer base {
+  :where(pre) {
+    padding: 1.5rem;
+    margin-inline: -1rem;
+  }
 
-:where(:root) {
-  color-scheme: dark light;
-}
+  @container global-container (768px <= width) {
+    :where(pre) {
+      margin-inline: 0;
+      border-radius: 0.5rem;
+    }
+  }
 
-:where(html, body) {
-  font-family: var(--font-family);
-  color: var(--c-primary);
-  background-color: var(--c-bg-primary);
-}
-
-:where(p) {
-  color: var(--c-text-main);
+  :where(p, h1, h2, h3, h4, h5, h6, pre) {
+    margin-block: var(--leading-trim);
+  }
 }

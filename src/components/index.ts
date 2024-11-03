@@ -1,2 +1,4 @@
-export { default as Header } from './Header.astro'
-export { default as Footer } from './Footer.astro'
+export * from './Header'
+export * from './Footer'
+export * from './Main'
+export * from './ArticleCard'

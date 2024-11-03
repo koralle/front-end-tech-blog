@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface LinkProps extends HTMLAttributes<'a'> {}
+
+const { href, ...props } = Astro.props as LinkProps
+---
+
+<a class="ui-link" href={href} {...props}>
+  <slot />
+</a>
+
+<style>
+  @layer component {
+    .ui-link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+
+      color: var(--c-text-main);
+
+      padding-block-end: 0.2em;
+      background-image: linear-gradient(var(--c-text-main), var(--c-text-main));
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 0 0.125em;
+      transition: background-size 0.3s;
+
+      @media (any-hover: hover) {
+        &:where(:any-link:hover) {
+          color: darken(var(--c-text-main), 10%);
+          background-position: bottom left;
+          background-size: 100% 0.125em;
+        }
+      }
+
+      &:where(:focus-visible) {
+        color: darken(var(--c-text-main), 10%);
+        background-position: bottom left;
+        background-size: 100% 0.125em;
+      }
+
+    }
+  }
+</style>

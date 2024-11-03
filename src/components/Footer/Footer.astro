@@ -1,0 +1,40 @@
+---
+
+---
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+    <p class="site-footer__copyright">&copy; koralle 2024</p>
+  </div>
+</footer>
+
+<style>
+  @layer layout {
+    :where(.site-footer) {
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+
+      :where(.site-footer__container) {
+        display: flex;
+        padding-inline: 1rem;
+        padding-block: 0.75rem;
+        justify-content: center;
+        width: 100%;
+
+        :where(.site-footer__copyright) {
+          font-size: 1rem;
+          font-weight: 400;
+          letter-spacing: 0.04em;
+          line-height: 1.5em;
+        }
+      }
+
+      @container global-container (width >= calc(1440 / 16 * 1rem)) {
+        :where(.site-footer__container) {
+          width: var(--width--globalContent);
+        }
+      }
+    }
+  }
+</style>
