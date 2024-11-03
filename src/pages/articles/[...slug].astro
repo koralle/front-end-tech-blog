@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
+import { ViewTransitions } from 'astro:transitions'
+import { Icon } from 'astro-icon/components'
+import dayjs from 'dayjs'
 import { SiteTitle } from '../../consts'
 import { Layout } from '../../layouts'
-import { ViewTransitions } from 'astro:transitions'
-import dayjs from 'dayjs'
-import { Icon } from 'astro-icon/components'
 
 export const getStaticPaths = async () => {
   const blogEntries = await getCollection('articles')
