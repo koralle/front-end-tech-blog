@@ -3,13 +3,18 @@ import { getCollection } from 'astro:content'
 import { Layout } from '../../layouts'
 import { ArticleCard } from '../../components'
 import 'dayjs/locale/ja'
+import dayjs from 'dayjs'
 
 const articles = await getCollection('articles')
 ---
 
 <Layout>
   <div class="article-list">
-    {articles.map((article) => <ArticleCard article={article} locale="ja" />)}
+    {
+      articles
+        .toSorted((a, b) => dayjs(b.data.publishedDate).unix() - dayjs(a.data.publishedDate).unix())
+        .map((article) => <ArticleCard article={article} locale="ja" />)
+    }
   </div>
 </Layout>
 
