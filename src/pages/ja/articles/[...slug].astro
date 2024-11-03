@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content'
+import { SiteTitle } from '../../../consts'
+import { Layout } from '../../../layouts'
+import { ViewTransitions } from 'astro:transitions'
+import dayjs from 'dayjs'
+import { Icon } from 'astro-icon/components'
+
+export const getStaticPaths = async () => {
+  const blogEntries = await getCollection('articles')
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }))
+}
+
+export const prerender = true
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{entry.data.title} | {SiteTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Layout>
+      <article class="article">
+        <header class="article__header">
+          <h1 class="article__title">{entry.data.title}</h1>
+          <div class="article__meta">
+            <span class="article__category">
+              <Icon name="mdi:folder-open" size="1rem" />
+              {entry.data.category}
+            </span>
+            <span class="article__publishedDate">
+              <Icon name="mdi:calendar-clock" size="1rem" />
+              {dayjs(entry.data.publishedDate).locale('ja').format('YYYY.MM.DD')}
+            </span>
+          </div>
+        </header>
+        <Content class="article__content" />
+      </article>
+    </Layout>
+  </body>
+</html>
+
+<style>
+  :where(.article) {
+    display: grid;
+    gap: 2rem;
+
+    :where(.article__header) {
+      display: grid;
+      gap: 1.5rem;
+
+      :where(.article__title) {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--c-primary);
+
+        margin-block: var(--leading-trim);
+      }
+
+      :where(.article__meta) {
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 1rem;
+
+        :where(.article__category) {
+          display: inline flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        :where(.article__publishedDate) {
+          display: inline flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+
+      :where(.article__content) {
+      }
+    }
+  }
+</style>

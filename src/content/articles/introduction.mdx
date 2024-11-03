@@ -1,4 +1,17 @@
 ---
+title: ブログ移行しました。
+category: Astro
+tags:
+  - Astro
+  - Cloudflare Pages
+  - フロントエンド
+publishedDate: 2024-11-02
+---
+
+ブログをAstro + Cloudflare Pagesに移行しました。
+
+```astro
+---
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { Link } from '../Link'
 import { Icon } from 'astro-icon/components'
@@ -7,14 +20,18 @@ import { Icon } from 'astro-icon/components'
 <header aria-label="サイトヘッダー" class="site-header">
   <div class="site-header__container">
     <div class="site-header__title">
-      <p>kollog</p>
+      <Link href="/">kollog</Link>
     </div>
 
     <nav class="site-header__nav">
       <Link href={getRelativeLocaleUrl('ja', '')}>HOME</Link>
       <Link href={getRelativeLocaleUrl('ja', 'about')}>ABOUT</Link>
       <Link href={getRelativeLocaleUrl('ja', 'articles')}>ARTICLES</Link>
-      <Link href="https://github.com/koralle" target="_blank" rel="noreferrer">
+      <Link
+        href="https://github.com/koralle/front-end-tech-blog"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Icon name="mdi:github" size="1.5rem" />
       </Link>
     </nav>
@@ -79,3 +96,4 @@ import { Icon } from 'astro-icon/components'
     }
   }
 </style>
+```

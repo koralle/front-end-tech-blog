@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content'
+import { Layout } from '../../../layouts'
+import ArticleCard from '../../../components/ArticleCard/ArticleCard.astro'
+import 'dayjs/locale/ja'
+
+const articles = await getCollection('articles')
+---
+
+<Layout>
+  <div class="article-list">
+    {articles.map((article) => <ArticleCard article={article} locale="ja" />)}
+  </div>
+</Layout>
+
+<style>
+  :where(.article-list) {
+    display: grid;
+    gap: 2rem;
+
+    @container global-container (width >= 768px) {
+    }
+  }
+</style>

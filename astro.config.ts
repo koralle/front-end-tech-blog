@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx'
 
 import react from '@astrojs/react'
 
-import icon from 'astro-icon';
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +19,14 @@ export default defineConfig({
   },
 
   integrations: [mdx(), react(), icon()],
+
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja'],
+    routing: {
+      prefixDefaultLocale: true
+    }
+  },
 
   markdown: {
     shikiConfig: {

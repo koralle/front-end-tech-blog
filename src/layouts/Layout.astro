@@ -8,6 +8,9 @@ import '../styles/global-styles.css'
 
 <html lang="ja">
   <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <ViewTransitions />
   </head>
   <body>
@@ -20,29 +23,28 @@ import '../styles/global-styles.css'
 </html>
 
 <style>
-@import url('../styles/vars.css') layer(base);
-@import url('../../node_modules/taks-custom-base-css/taks-custom-base.css') layer(reset);
+  @import url('../styles/vars.css') layer(base);
+  @import url('../../node_modules/taks-custom-base-css/taks-custom-base.css') layer(reset);
 
-@layer base {
-  :where(:root) {
-    color-scheme: dark light;
+  @layer base {
+    :where(:root) {
+      color-scheme: dark light;
+    }
+
+    :where(html, body) {
+      font-family: var(--font-family);
+      color: var(--c-text-main);
+      background-color: var(--c-bg-primary);
+    }
+
+    :where(body) {
+      container-name: global-container;
+      container-type: inline-size;
+
+      position: relative;
+
+      display: grid;
+      grid-template-rows: max-content 1fr max-content;
+    }
   }
-
-  :where(html, body) {
-    font-family: var(--font-family);
-    color: var(--c-text-main);
-    background-color: var(--c-bg-primary);
-  }
-
-  :where(body) {
-    container-name: global-container;
-    container-type: inline-size;
-
-    position: relative;
-
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
-  }
-}
-
 </style>

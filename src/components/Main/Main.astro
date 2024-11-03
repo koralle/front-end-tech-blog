@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <main id="main" class="ui-main">
@@ -8,29 +9,33 @@
 </main>
 
 <style>
-@layer layout {
-  :where(.ui-main) {
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+  @layer layout {
+    :where(.ui-main) {
+      container-name: main-content;
+      container-type: inline-size;
 
-    width: 100cqi;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
 
-    :where(.ui-main__container) {
-      padding-inline: 1rem;
-      padding-block: 0.75rem;
+      width: 100cqi;
 
-      width: 100%;
-    }
-
-    @container global-container (width >= calc(768 / 16 * 1rem)) {
-    }
-
-    @container global-container (width >= calc(1440 / 16 * 1rem)) {
       :where(.ui-main__container) {
-        width: calc(1440 / 16 * 1rem);
+        padding-inline: 1rem;
+        padding-block: 0.75rem;
+        box-sizing: border-box;
+
+        width: 100%;
+      }
+
+      @container global-container (width 768px) {
+      }
+
+      @container global-container (width >= 1024px) {
+        :where(.ui-main__container) {
+          width: var(--width--mainContent);
+        }
       }
     }
   }
-}
 </style>
