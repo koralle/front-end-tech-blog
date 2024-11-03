@@ -1,17 +1,116 @@
 ---
+import { getCollection } from 'astro:content'
 import { SiteDescription, SiteTitle } from '../consts'
 import { Layout } from '../layouts'
+
+import 'dayjs/locale/ja'
+import { ArticleCard } from '../components'
+
+const articles = await getCollection('articles')
 ---
 
 <html lang="ja">
   <head>
+    <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
     <title>{SiteTitle} | Top</title>
     <meta name="description" content={SiteDescription} />
   </head>
   <body>
     <Layout>
-      <h1>Astro</h1>
+      <section class="page-container">
+        <header class="page-header">
+          <hgroup class="page-header__hgroup">
+            <h1>kollog</h1>
+            <p>フロントエンド技術の海にぷかぷか浮かぶあざらしの技術ブログ</p>
+          </hgroup>
+        </header>
+
+        <section class="latest-articles">
+          <header class="latest-articles__header">
+            <h2>最新記事一覧</h2>
+          </header>
+          <div class="latest-articles__list">
+            {articles.map((article) => <ArticleCard article={article} locale="ja" />)}
+          </div>
+        </section>
+      </section>
     </Layout>
   </body>
 </html>
+
+<style>
+  @layer layout {
+    :where(.page-container) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      :where(.page-header) {
+        height: 6rem;
+
+        :where(.page-header__hgroup) {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          justify-content: center;
+          align-items: center;
+
+          > h1 {
+            font-size: 2rem;
+            color: var(--c-primary);
+          }
+
+          > p {
+            font-size: calc(11 / 16 * 1rem);
+          }
+        }
+      }
+
+      :where(.latest-articles) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        height: max-content;
+
+        :where(.latest-articles__header) {
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: max-content;
+
+          > h2 {
+            display: inline flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+          }
+        }
+
+        :where(.latest-articles__list) {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
+
+      @container global-container (width >= 768px) {
+        :where(.page-header) {
+          :where(.page-header__hgroup) {
+            > p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      @container global-container (width >= 1024px) {
+      }
+    }
+  }
+</style>

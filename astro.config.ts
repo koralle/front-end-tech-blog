@@ -20,14 +20,6 @@ export default defineConfig({
 
   integrations: [mdx(), react(), icon()],
 
-  i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja'],
-    routing: {
-      prefixDefaultLocale: true
-    }
-  },
-
   markdown: {
     shikiConfig: {
       themes: {

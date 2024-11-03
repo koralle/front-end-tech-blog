@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import { Layout } from '../../../layouts'
-import ArticleCard from '../../../components/ArticleCard/ArticleCard.astro'
+import { Layout } from '../../layouts'
+import { ArticleCard } from '../../components'
 import 'dayjs/locale/ja'
 
 const articles = await getCollection('articles')
