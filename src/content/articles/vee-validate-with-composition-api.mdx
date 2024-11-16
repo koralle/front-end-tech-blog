@@ -1,0 +1,91 @@
+---
+title: VeeValidateをComposition APIで使うぞ
+category: Vue
+tags:
+  - TypeScript
+  - Vue
+publishedDate: 2024-11-15
+---
+
+import { LinkPreview } from '@astro-community/astro-embed-link-preview'
+
+## VeeValidate
+
+Vueにおけるフォームライブラリの鉄板。
+
+<LinkPreview id="https://vee-validate.logaretm.com/v4/" />
+
+## VeeValidateとComposition API
+
+VeeValidateは2種類の使い方がある。
+
+1つは、`VeeValidate`でビルトインされているコンポーネントを使ってフォームを組み立てる方法。
+
+```vue
+<template>
+  <Form @submit="submit" :validation-schema="simpleSchema">
+    <Field name="email" />
+    <ErrorMessage name="email" />
+    <Field name="password" type="password" />
+    <ErrorMessage name="password" />
+    <button>Submit</button>
+  </Form>
+</template>
+<script setup>
+import { Form, Field, ErrorMessage } from 'vee-validate'
+const simpleSchema = {
+  email(value) {
+    // validate email value...
+  },
+  name(value) {
+    // validate name value...
+  },
+  // If you defined global rules you can also use them
+  password: 'required|min:8',
+  // ...
+}
+</script>
+```
+
+もう一つは、Composition APIを使ってフォームを組み立てる方法。
+
+```vue
+<script setup>
+import { useForm } from 'vee-validate';
+
+const { values, defineField } = useForm();
+
+const [email, emailAttrs] = defineField('email');
+</script>
+
+<template>
+  <input v-model="email" v-bind="emailAttrs" type="text" />
+
+  <pre>values: {{ values }}</pre>
+</template>
+```
+
+この2つのアプローチをざっと見比べた時、どう考えても後者のComposition APIを使ったアプローチの方が柔軟性が高いのは明白。  
+実際、[VeeValidateの公式ドキュメントのComposition APIのページ](https://vee-validate.logaretm.com/v4/guide/composition-api/getting-started/)でもComposition APIを使ったアプローチを推奨している。
+
+>  However, the composition API is easier to integrate and more flexible. You can build custom components with it or integrate it with any UI library. It is generally recommended to use the composition API.
+> しかし、コンポジションAPIはより簡単に統合でき、柔軟性も高い。 このAPIを使ってカスタム・コンポーネントを構築したり、任意のUIライブラリと統合したりすることができる。 一般的には、コンポジションAPIを使うことを推奨する。
+
+なので、Composition APIを使ったアプローチさえ理解できれば「VeeValidateを使いこなしている」と言って良さそう。
+
+## `useForm`
+
+`useForm` はComposition API方式を使ったアプローチの中で最も重要な関数。  
+※ `useForm` はその役割から、コンポーネントの中で複数回呼び出すことは推奨されていない。
+
+`useForm`の役割はざっとこんな感じ（ドキュメントを和訳しただけ）
+
+- 子コンポーネントとして宣言するすべてのフィールドの値コレクターとして振る舞う。
+- フィールドを検証し、エラーを集計する。
+- すべてのフィールドの有効性、タッチ、ダーティーの状態を集約する。
+
+
+
+## フォームのハンドリング
+
+## さらにZodも一緒に使ってみよう
