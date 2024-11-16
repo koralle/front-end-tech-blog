@@ -21,7 +21,7 @@ const { href, ...props } = Astro.props as LinkProps
       color: var(--c-text-main);
 
       padding-block-end: 0.2em;
-      background-image: linear-gradient(var(--c-text-main), var(--c-text-main));
+      background-image: linear-gradient(var(--c-link-hover), var(--c-link-hover));
       background-repeat: no-repeat;
       background-position: bottom right;
       background-size: 0 0.125em;
@@ -29,14 +29,14 @@ const { href, ...props } = Astro.props as LinkProps
 
       @media (any-hover: hover) {
         &:where(:any-link:hover) {
-          color: darken(var(--c-text-main), 10%);
+          color: var(--c-link-hover);
           background-position: bottom left;
           background-size: 100% 0.125em;
         }
       }
 
       &:where(:focus-visible) {
-        color: darken(var(--c-text-main), 10%);
+        color: var(--c-link-hover);
         background-position: bottom left;
         background-size: 100% 0.125em;
       }
