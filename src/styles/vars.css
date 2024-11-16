@@ -33,6 +33,12 @@
   initial-value: light-dark(#3d3d3d, #d3d3d3);
 }
 
+@property --c-link-hover {
+  syntax: '*';
+  inherits: false;
+  initial-value: light-dark(#737373, #a3a3a3);
+}
+
 @property --leading-trim {
   syntax: '<length>';
   inherits: false;
