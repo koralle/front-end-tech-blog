@@ -13,7 +13,8 @@ export const articleSchema = z
       .optional(),
     language: z.union([z.literal('ja'), z.literal('en')]).default('ja'),
     footnote: z.string().optional(),
-    publishedDate: z.date()
+    publishedDate: z.date(),
+    lastUpdatedDate: z.date().optional()
   })
   .strict()
 
