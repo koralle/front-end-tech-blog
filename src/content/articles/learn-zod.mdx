@@ -16,3 +16,27 @@ import { LinkPreview } from '@astro-community/astro-embed-link-preview'
 ## Zod
 
 <LinkPreview id="https://zod.dev/" />
+
+## Zod Playground
+
+ZodにはPlaygroundがあり、気軽にZodの挙動を確認できる。ローカルでサンプルプロジェクトを立てる必要がない。
+
+<LinkPreview id='https://zod-playground.vercel.app/' />
+
+## `coerce`
+
+ある型を別のPrimitive型に強制的に変換したスキーマとして扱いたい時、`coerce`を使うことができる。因みに、`coerce` は「コアース」や「コワース」などと読むらしい。
+
+例えば、`number` 型の `12`を`string`型の`12`として扱いたい場合、まずは
+
+```ts
+const schema = z.coerce.string()
+```
+
+というスキーマを定義する。すると
+
+```ts
+schema.parse(12) // "12"
+```
+
+となる。 こうなるのは裏では `String()` が呼ばれているから。
