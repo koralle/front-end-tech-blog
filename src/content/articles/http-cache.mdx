@@ -5,4 +5,48 @@ tags:
   - HTTP
   - Web
 publishedDate: 2024-11-22
+lastUpdatedDate: 2024-11-25
 ---
+
+import { LinkPreview } from '@astro-community/astro-embed-link-preview'
+
+## Motivation
+
+キャッシュについてちゃんと理解するのはフロントエンドの人間にとって必要不可欠だと思う。正直。
+
+## キャッシュって何だっけ
+
+まず、「キャッシュする」とは一体どういうプロセスなのか考える。Cloudflareのドキュメントにいいことが書いてある。
+
+<LinkPreview id='https://www.cloudflare.com/learning/cdn/what-is-caching/' />
+
+これを読む限り、HTTPにおける「キャッシュする」とは、HTTPリクエストに紐づくレスポンスのデータをどこか一時的に保存しておいて、似た様なHTTPリクエストがあった時にそのデータを使い回すプロセスを指すことが分かる。
+この時に使い回すデータ（ファイルを含む）を**キャッシュ**と呼ぶ。
+
+## キャッシュは何が嬉しいんだっけ
+
+## キャッシュの種類
+
+キャッシュはプライベートキャッシュと共有キャッシュの2種類に大別することができる。
+
+### プライベートキャッシュ
+
+### 共有キャッシュ
+
+## If-Modified-Since
+
+## Expires
+
+## ETag
+
+## Cache-Control
+
+## stale-while-revalidate
+
+<LinkPreview id='https://web.dev/articles/stale-while-revalidate?hl=ja' />
+
+## Vary
+
+## 参考リンク
+
+<LinkPreview id='https://developer.mozilla.org/ja/docs/Web/HTTP/Caching' />
