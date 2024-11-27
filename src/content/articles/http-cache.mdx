@@ -35,6 +35,16 @@ import { LinkPreview } from '@astro-community/astro-embed-link-preview'
 
 ## If-Modified-Since
 
+HTTP/1.0の時代から存在するHTTPヘッダー。
+
+<LinkPreview id='https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/If-Modified-Since' />
+
+`If-Modified-Since` ヘッダーで指定された時刻以降にリソースが変更されていれば、新しいリソースを `200` のステータスコードと共に返す。
+
+そうでない場合ステータスコードは `304` とし、**レスポンスに本文は含めない**。
+
+また、このヘッダーに詰める時刻のタイムゾーンは `GMT` にしないといけないところは注意が必要。
+
 ## Expires
 
 ## ETag
