@@ -28,7 +28,7 @@
     "@astro-community/astro-embed-link-preview": "^0.2.2",
     "@iconify-json/mdi": "^1.2.1",
     "@nanostores/react": "^0.8.0",
-    "astro": "^4.16.14",
+    "astro": "^4.16.15",
     "astro-icon": "^1.1.4",
     "dayjs": "^1.11.13",
     "nanostores": "^0.11.3",
@@ -45,15 +45,15 @@
     "@cloudflare/workers-types": "^4.20241112.0",
     "@shikijs/transformers": "^1.23.1",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "lefthook": "^1.8.4",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-accessible-emojis": "^0.3.2",
     "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.7.2",
-    "wrangler": "^3.90.0"
+    "wrangler": "^3.91.0"
   }
 }
