@@ -13,18 +13,18 @@ const { article, locale } = Astro.props
 ---
 
 <div class="ui-article-card">
+  <span class="ui-article-card__publishedDate">
+    <Icon name="mdi:calendar-clock" size="1rem" />
+    {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
+  </span>
   <Link href={`/articles/${article.slug}`}>
-    <span>{article.data.title}</span>
+    <span class="ui-article-card__title">{article.data.title}</span>
   </Link>
   <div class="ui-article-card__meta">
     <div>
       <span class="ui-article-card__category">
         <Icon name="mdi:folder-open" size="1rem" />
         {article.data.category}
-      </span>
-      <span class="ui-article-card__publishedDate">
-        <Icon name="mdi:calendar-clock" size="1rem" />
-        {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
       </span>
     </div>
   </div>
@@ -34,8 +34,21 @@ const { article, locale } = Astro.props
   @layer component {
     :where(.ui-article-card) {
       display: grid;
-      gap: 0.5rem;
       justify-items: start;
+
+      :where(.ui-article-card__title) {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+
+      @container global-container (width >= 768px) {
+        :where(.ui-article-card__title) {
+          font-size: 1.5rem;
+          line-height: 2.0;
+        }
+      }
 
       :where(.ui-article-card__meta) {
         display: grid;
