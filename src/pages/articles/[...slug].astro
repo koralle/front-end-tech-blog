@@ -22,17 +22,17 @@ const { Content } = await entry.render()
 <Layout>
   <article class="article">
     <header class="article__header">
-      <h1 class="article__title">{entry.data.title}</h1>
-      <div class="article__meta">
-        <span class="article__category">
-          <Icon name="mdi:folder-open" size="1rem" />
-          {entry.data.category}
-        </span>
-        <span class="article__publishedDate">
+      <hgroup class="article__hgroup">
+        <p class="article__publishedDate">
           <Icon name="mdi:calendar-clock" size="1rem" />
           {dayjs(entry.data.publishedDate).locale('ja').format('YYYY.MM.DD')}
-        </span>
-      </div>
+        </p>
+        <h1 class="article__title">{entry.data.title}</h1>
+        <p class="article__category">
+          <Icon name="mdi:folder-open" size="1rem" />
+          {entry.data.category}
+        </p>
+      </hgroup>
     </header>
     <Content class="article__content" />
   </article>
@@ -44,41 +44,44 @@ const { Content } = await entry.render()
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 100%;
 
     :where(.article__header) {
-      display: grid;
-      gap: 1.5rem;
       width: 100%;
 
-      :where(.article__title) {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--c-primary);
+      :where(.article__hgroup) {
+        display: grid;
+        place-items: center;
         width: 100%;
+        grid-template-rows: max-content max-content max-content;
+        gap: 0.5rem;
 
-        margin-block: var(--leading-trim);
-      }
+        :where(.article__title) {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          font-weight: 700;
+          color: var(--c-primary);
+          width: 100%;
+          text-wrap: balance;
 
-      :where(.article__meta) {
-        display: flex;
-        justify-content: space-between;
+          margin-block: var(--leading-trim);
+        }
 
-        font-size: 1rem;
 
-        :where(.article__category) {
+        @container global-container (width >= 768px) {
+          :where(.article__title) {
+            font-size: 1.5rem;
+            line-height: 2.0;
+          }
+        }
+
+        :where(.article__category, .article__publishedDate) {
+          width: 100%;
           display: inline flex;
           align-items: center;
           gap: 0.5rem;
+          text-align: start;
         }
-
-        :where(.article__publishedDate) {
-          display: inline flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-      }
-
-      :where(.article__content) {
       }
     }
   }
