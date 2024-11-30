@@ -13,6 +13,10 @@ const { article, locale } = Astro.props
 ---
 
 <div class="ui-article-card">
+  <span class="ui-article-card__publishedDate">
+    <Icon name="mdi:calendar-clock" size="1rem" />
+    {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
+  </span>
   <Link href={`/articles/${article.slug}`}>
     <span>{article.data.title}</span>
   </Link>
@@ -21,10 +25,6 @@ const { article, locale } = Astro.props
       <span class="ui-article-card__category">
         <Icon name="mdi:folder-open" size="1rem" />
         {article.data.category}
-      </span>
-      <span class="ui-article-card__publishedDate">
-        <Icon name="mdi:calendar-clock" size="1rem" />
-        {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
       </span>
     </div>
   </div>
