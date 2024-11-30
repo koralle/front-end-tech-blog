@@ -1,4 +1,8 @@
 @layer base {
+  :where(body) {
+    letter-spacing: 0.04em;
+  }
+
   :where(pre) {
     padding: 1.5rem;
     margin-inline: -1rem;
