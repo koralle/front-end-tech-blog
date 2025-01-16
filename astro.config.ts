@@ -4,8 +4,6 @@ import mdx from '@astrojs/mdx'
 
 import react from '@astrojs/react'
 
-import icon from 'astro-icon'
-
 import {
   transformerMetaHighlight,
   transformerNotationDiff,
@@ -27,7 +25,7 @@ export default defineConfig({
     }
   },
 
-  integrations: [mdx(), react(), icon()],
+  integrations: [mdx(), react()],
 
   markdown: {
     rehypePlugins: [
