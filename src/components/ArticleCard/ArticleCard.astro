@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Icon } from 'astro-icon/components'
 import dayjs from 'dayjs'
+import { CalendarClock, FolderOpen } from 'lucide-astro'
 import { Link } from '../Link'
 
 interface Props {
@@ -14,7 +14,7 @@ const { article, locale } = Astro.props
 
 <div class="ui-article-card">
   <span class="ui-article-card__publishedDate">
-    <Icon name="mdi:calendar-clock" size="1rem" />
+    <CalendarClock />
     {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
   </span>
   <Link href={`/articles/${article.slug}`}>
@@ -23,7 +23,7 @@ const { article, locale } = Astro.props
   <div class="ui-article-card__meta">
     <div>
       <span class="ui-article-card__category">
-        <Icon name="mdi:folder-open" size="1rem" />
+        <FolderOpen />
         {article.data.category}
       </span>
     </div>
