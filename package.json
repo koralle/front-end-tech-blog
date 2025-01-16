@@ -29,7 +29,6 @@
     "@iconify-json/mdi": "^1.2.2",
     "@nanostores/react": "^0.8.4",
     "astro": "^5.1.7",
-    "astro-icon": "^1.1.5",
     "dayjs": "^1.11.13",
     "lucide-astro": "^0.471.0",
     "nanostores": "^0.11.3",
