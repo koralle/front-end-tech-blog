@@ -17,7 +17,7 @@ const { article, locale } = Astro.props
     <CalendarClock />
     {dayjs(article.data.publishedDate).locale(locale).format('YYYY.MM.DD')}
   </span>
-  <Link href={`/articles/${article.slug}`}>
+  <Link href={`/articles/${article.id}`}>
     <span class="ui-article-card__title">{article.data.title}</span>
   </Link>
   <div class="ui-article-card__meta">

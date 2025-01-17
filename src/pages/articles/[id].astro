@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import dayjs from 'dayjs'
 import { CalendarClock, FolderOpen } from 'lucide-astro'
 import { Layout } from '../../layouts'
@@ -8,7 +8,7 @@ export const getStaticPaths = async () => {
   const blogEntries = await getCollection('articles')
 
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry }
   }))
 }
@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
 export const prerender = true
 
 const { entry } = Astro.props
-const { Content } = await entry.render()
+const { Content } = await render(entry)
 ---
 
 <Layout>
