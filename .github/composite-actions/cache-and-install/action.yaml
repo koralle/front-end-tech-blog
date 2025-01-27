@@ -6,7 +6,7 @@ runs:
 
   steps:
     - name: Install Node.js
-      uses: actions/setup-node@v4.1.0
+      uses: actions/setup-node@v4.2.0
       with:
         node-version: 22
         check-latest: true
