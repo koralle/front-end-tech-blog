@@ -11,7 +11,7 @@ runs:
         node-version: 22
         check-latest: true
 
-    - uses: pnpm/action-setup@v4.0.0
+    - uses: pnpm/action-setup@v4.1.0
       name: Install pnpm
       with:
         run_install: false
