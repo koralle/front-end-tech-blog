@@ -27,7 +27,7 @@
   "dependencies": {
     "@astro-community/astro-embed-link-preview": "^0.2.2",
     "@iconify-json/mdi": "^1.2.3",
-    "@nanostores/react": "^0.8.4",
+    "@nanostores/react": "^1.0.0",
     "astro": "^5.1.10",
     "dayjs": "^1.11.13",
     "lucide-astro": "^0.473.0",
