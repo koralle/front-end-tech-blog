@@ -31,7 +31,7 @@
     "astro": "^5.1.10",
     "dayjs": "^1.11.13",
     "lucide-astro": "^0.473.0",
-    "nanostores": "^0.11.3",
+    "nanostores": "^1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "taks-custom-base-css": "^1.3.4"
