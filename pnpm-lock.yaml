@@ -88,8 +88,8 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2
       rollup-plugin-visualizer:
-        specifier: ^5.13.1
-        version: 5.13.1(rollup@4.24.3)
+        specifier: ^6.0.3
+        version: 6.0.3(rollup@4.24.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -2296,13 +2296,12 @@ packages:
   rollup-plugin-node-polyfills@0.2.1:
     resolution: {integrity: sha512-4kCrKPTJ6sK4/gLL/U5QzVT8cxJcofO0OU74tnB19F40cmuAKSzH5/siithxlofFEjwvw1YAhPmbvGNA6jEroA==}
 
-  rollup-plugin-visualizer@5.13.1:
-    resolution: {integrity: sha512-vMg8i6BprL8aFm9DKvL2c8AwS8324EgymYQo9o6E26wgVvwMhsJxS37aNL6ZsU7X9iAcMYwdME7gItLfG5fwJg==}
+  rollup-plugin-visualizer@6.0.3:
+    resolution: {integrity: sha512-ZU41GwrkDcCpVoffviuM9Clwjy5fcUxlz0oMoTXTYsK+tcIFzbdacnrr2n8TXcHxbGKKXtOdjxM2HUS4HjkwIw==}
     engines: {node: '>=18'}
-    deprecated: Contains unintended breaking changes
     hasBin: true
     peerDependencies:
-      rolldown: 1.x
+      rolldown: 1.x || ^1.0.0-beta
       rollup: 2.x || 3.x || 4.x
     peerDependenciesMeta:
       rolldown:
@@ -5616,7 +5615,7 @@ snapshots:
     dependencies:
       rollup-plugin-inject: 3.0.2
 
-  rollup-plugin-visualizer@5.13.1(rollup@4.24.3):
+  rollup-plugin-visualizer@6.0.3(rollup@4.24.3):
     dependencies:
       open: 8.4.2
       picomatch: 4.0.2

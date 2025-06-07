@@ -53,7 +53,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-accessible-emojis": "^0.3.2",
-    "rollup-plugin-visualizer": "^5.13.1",
+    "rollup-plugin-visualizer": "^6.0.3",
     "typescript": "^5.7.3",
     "wrangler": "^3.105.1"
   }
